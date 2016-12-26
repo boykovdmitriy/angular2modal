@@ -39,11 +39,11 @@ export class NotificationManager {
 		return component;
 	}
 
-	public showToast(header: string, description: string) {
+	public showToast(header: string, description: string,timeOut: number = 3000) {
 		let component = this.createNotificationWithData<TinyNotificationComponent>(TinyNotificationComponent, {
 			header     : header,
 			description: description
 		});
-		this.notificationPanel.showNotification(component);
+		this.notificationPanel.showNotification(component,timeOut);
 	}
 }

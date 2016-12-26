@@ -11,11 +11,12 @@ import {
 import { NotificationManager } from "./modal/notification.manager";
 
 @Component({
-	           selector     : 'body',
-	           template     : `
-				<button (click)="show()">Show Toast</button>
+	           selector: 'dynamic-modal',
+	           template: `
+				<button class="button"  (click)="show()">Show Toast</button>
 				<section #notificationBlock></section>
-				`
+				`,
+	           styles  : [require('../sharedStyle/buttons.style.css')]
            })
 export class DynamicModalPageComponent implements OnInit {
 	@ViewChild('notificationBlock', { read: ViewContainerRef }) notificationBlock: ViewContainerRef;
@@ -23,7 +24,7 @@ export class DynamicModalPageComponent implements OnInit {
 	constructor(private notificationManager: NotificationManager) { }
 
 	public show() {
-		this.notificationManager.showToast("header", "toasdfsdfsdfsdfsst");
+		this.notificationManager.showToast("header", "toasdfsdfsdfsdfsst",100000);
 	}
 
 	public ngOnInit(): void {

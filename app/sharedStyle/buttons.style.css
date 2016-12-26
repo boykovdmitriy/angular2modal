@@ -1,0 +1,21 @@
+
+.button {
+	background-color : #008CBA;
+	border           : none;
+	color            : white;
+	text-align       : center;
+	text-decoration  : none;
+	display          : inline-block;
+	text-transform   : uppercase;
+	font-size        : 0.8125rem;
+	padding          : 0.4375rem 1.5625rem;
+	border-radius    : 5px;
+}
+
+.button:active {
+	background-color : #006e96;
+}
+
+.button:focus, .button:active, .button:hover {
+	outline : 0;
+}

@@ -1,0 +1,12 @@
+@import "./sharedStyle/variables.style.css";
+
+html, body {
+	margin     : 0;
+	font-size  : 16px;
+	background : #eff0f3;
+}
+
+.header {
+	background : var(--header-color);
+	color      : white;
+}

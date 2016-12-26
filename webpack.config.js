@@ -21,7 +21,7 @@ module.exports = {
 			{
 				test   : /\.css$/,
 				exclude: /node_modules/,
-				loader : "style!css"
+				loader : "to-string-loader!css"
 			},
 			{
 				test  : /\.html/,

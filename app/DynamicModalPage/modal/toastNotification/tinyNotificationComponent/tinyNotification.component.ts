@@ -9,7 +9,7 @@ import { NotificationBase } from "../../notificationBase";
 @Component({
 	           selector     : 'tiny-notification',
 	           template     : require('./tinyNotification.template.html'),
-	           styles       : [String(require('./tinyNotification.style.css'))],
+	           styles       : [require('./tinyNotification.style.css')],
 	           encapsulation: ViewEncapsulation.Emulated
            })
 export class TinyNotificationComponent extends NotificationBase {

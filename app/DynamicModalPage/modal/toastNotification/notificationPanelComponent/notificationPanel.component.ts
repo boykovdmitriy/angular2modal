@@ -16,13 +16,13 @@ import { Subscription } from "rxjs/Rx";
 	<div #notifications></div>
 </div>
 						`,
-	           styles       : [String(require('./notificationPanel.style.css'))],
+	           styles    : [require('./notificationPanel.style.css')],
 	           encapsulation: ViewEncapsulation.Emulated
            })
 export class NotificationPanelComponent {
 	@ViewChild('notifications', { read: ViewContainerRef }) notificationBlock: ViewContainerRef;
 
-	public showNotification(componentRef: ComponentRef<any>, timeOut: number = 3000) {
+	public showNotification(componentRef: ComponentRef<any>, timeOut: number) {
 		let toast = componentRef;
 		this.notificationBlock.insert(toast.hostView);
 		let subscription = toast.instance.closedEvent.subscribe(()=> {
