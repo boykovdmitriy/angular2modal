@@ -7,7 +7,10 @@ import {
 
 @Component({
 	           selector: 'body',
-	           template: '<div>Hello World!</div>',
+	           template: `
+<div class="header">header</div>
+<router-outlet></router-outlet>`,
+	styles:[`.header{background: red; width: 100%;}`]
            })
 export class AppComponent {
 }

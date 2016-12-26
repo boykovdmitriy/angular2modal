@@ -1,5 +1,5 @@
-var webpack           = require("webpack"),
-    path              = require("path");
+var webpack = require("webpack"),
+    path    = require("path");
 
 module.exports = {
 	devtool  : "source-map",
@@ -7,7 +7,7 @@ module.exports = {
 		"app": "./app/boot.ts"
 	},
 	output   : {
-		"filename"  : "./public/[name].js"
+		"filename": "./public/[name].js"
 	},
 	resolve  : {
 		extensions: ["", ".js", ".ts", ".css"]
@@ -22,6 +22,10 @@ module.exports = {
 				test   : /\.css$/,
 				exclude: /node_modules/,
 				loader : "style!css"
+			},
+			{
+				test  : /\.html/,
+				loader: 'raw'
 			}
 		]
 	},
@@ -30,9 +34,10 @@ module.exports = {
 		compress          : false,
 		quiet             : false,
 		noInfo            : false,
+		headers           : {"X-Custom-Header": "yes"},
 		stats             : {colors: true},
 		port              : 5000,
-		inline            : false,
+		inline            : true,
 		watch             : true,
 		open              : true
 	}
