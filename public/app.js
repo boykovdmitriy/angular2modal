@@ -60805,7 +60805,7 @@
 	    core_1.Component({
 	        selector: 'dynamic-modal',
 	        template: `
-					<button class="button"  (click)="show()">Show Toast</button>
+					<button class="simple-button"  (click)="show()">Show Toast</button>
 					<section #notificationBlock></section>
 					`,
 	        styles: [String(__webpack_require__(676))]

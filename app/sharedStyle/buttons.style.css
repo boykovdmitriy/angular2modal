@@ -1,5 +1,5 @@
 
-.button {
+.simple-button {
 	background-color : #008CBA;
 	border           : none;
 	color            : white;
@@ -13,10 +13,10 @@
 	border-radius    : 5px;
 }
 
-.button:active {
+.simple-button:active {
 	background-color : #006e96;
 }
 
-.button:focus, .button:active, .button:hover {
+.simple-button:focus, .simple-button:active, .simple-button:hover {
 	outline : 0;
 }

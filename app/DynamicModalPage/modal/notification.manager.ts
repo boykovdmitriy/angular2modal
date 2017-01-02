@@ -26,22 +26,9 @@ export class NotificationManager {
 
 	public init(notificationBlock: ViewContainerRef) {
 		this.notificationBlock = notificationBlock;
-		let component          = this.createComponent(NotificationPanelComponent);
+		const component          = this.createComponent(NotificationPanelComponent);
 		this.notificationPanel = component.instance;
 		this.notificationBlock.insert(component.hostView);
-	}
-
-	private createComponent<T>(componentType: {new (...args: any[]): T;}): ComponentRef<T> {
-		let injector = ReflectiveInjector.fromResolvedProviders([], this.notificationBlock.parentInjector);
-		let factory  = this.componentFactoryResolver.resolveComponentFactory(componentType);
-		return factory.create(injector);
-	}
-
-	private createNotificationWithData<T>(componentType: {new (...args: any[]): T;}, data: any): ComponentRef<T> {
-		let component = this.createComponent(componentType);
-		Object.assign(component.instance, data);
-
-		return component;
 	}
 
 	public showDialog<T extends ModalDialogBase>(componentType: {new (...args: any[]): T;},
@@ -61,10 +48,23 @@ export class NotificationManager {
 	}
 
 	public showToast(header: string, description: string, timeOut: number = 3000) {
-		let component = this.createNotificationWithData<TinyNotificationComponent>(TinyNotificationComponent, {
+		const component = this.createNotificationWithData<TinyNotificationComponent>(TinyNotificationComponent, {
 			header     : header,
 			description: description
 		});
 		this.notificationPanel.showNotification(component, timeOut);
+	}
+
+	private createComponent<T>(componentType: {new (...args: any[]): T;}): ComponentRef<T> {
+		const injector = ReflectiveInjector.fromResolvedProviders([], this.notificationBlock.parentInjector);
+		const factory  = this.componentFactoryResolver.resolveComponentFactory(componentType);
+		return factory.create(injector);
+	}
+
+	private createNotificationWithData<T>(componentType: {new (...args: any[]): T;}, data: any): ComponentRef<T> {
+		const component = this.createComponent(componentType);
+		Object.assign(component.instance, data);
+
+		return component;
 	}
 }

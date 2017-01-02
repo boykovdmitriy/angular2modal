@@ -22,6 +22,7 @@ import { Subject } from "rxjs";
 export class ModalDialogComponent extends ModalDialogBase {
 	private header: string;
 	private description: string;
+	private modalState: Subject<ModalDialogResult>;
 
 	constructor() {
 		super();
@@ -39,6 +40,4 @@ export class ModalDialogComponent extends ModalDialogBase {
 	private close() {
 		this.modalState.next(ModalDialogResult.Closed);
 	}
-
-	private modalState: Subject<ModalDialogResult>;
 }
