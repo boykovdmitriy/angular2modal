@@ -11,6 +11,11 @@ import {
 } from "@angular/core";
 import { TinyNotificationComponent } from "./toastNotification/tinyNotificationComponent/tinyNotification.component";
 import { NotificationPanelComponent } from "./toastNotification/notificationPanelComponent/notificationPanel.component";
+import {
+	ModalDialogResult,
+	ModalDialogBase
+} from "./modalDialog.base";
+import { Subject } from "rxjs";
 
 @Injectable()
 export class NotificationManager {
@@ -39,11 +44,27 @@ export class NotificationManager {
 		return component;
 	}
 
-	public showToast(header: string, description: string,timeOut: number = 3000) {
+	public showDialog<T extends ModalDialogBase>(componentType: {new (...args: any[]): T;},
+	                                             header: string,
+	                                             description: string): Subject<ModalDialogResult> {
+		const dialog = this.createNotificationWithData(componentType, {
+			header     : header,
+			description: description
+		});
+		this.notificationBlock.insert(dialog.hostView);
+		const subject = dialog.instance.getDialogState();
+		const sub     = subject.subscribe(x=> {
+			dialog.destroy();
+			sub.unsubscribe();
+		});
+		return subject;
+	}
+
+	public showToast(header: string, description: string, timeOut: number = 3000) {
 		let component = this.createNotificationWithData<TinyNotificationComponent>(TinyNotificationComponent, {
 			header     : header,
 			description: description
 		});
-		this.notificationPanel.showNotification(component,timeOut);
+		this.notificationPanel.showNotification(component, timeOut);
 	}
 }
