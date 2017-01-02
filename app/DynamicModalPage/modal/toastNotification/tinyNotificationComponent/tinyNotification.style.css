@@ -1,9 +1,42 @@
 .container {
-	border    : dotted #0a0a0a 2px;
-	margin    : 5px;
-	min-width : 300px;
+	position        : relative;
+	display         : flex;
+	flex-direction  : column;
+	justify-content : flex-start;
+	width           : 350px;
+	border-radius   : 5px;
+	background      : black;
+	color           : white;
+	margin-bottom   : 15px;
+	padding-bottom  : 10px;
+	animation       : appear .5s linear;
+	opacity         : 0.6;
 }
 
-.header {
-	background : black;
+.container:hover {
+	opacity : 0.8;
+}
+
+.header-block {
+	display         : flex;
+	flex-direction  : row;
+	justify-content : space-between;
+	align-items     : center;
+	padding         : 5px 15px;
+}
+
+.header-title {
+	margin : 0;
+}
+
+.content {
+	color      : white;
+	padding    : 1rem;
+	border-top : 1px solid white;
+}
+
+.close-button {
+	font-size : 1.2rem;
+	cursor    : pointer;
+	color     : white;
 }

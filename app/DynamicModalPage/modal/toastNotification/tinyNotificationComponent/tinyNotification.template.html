@@ -1,9 +1,11 @@
 <div class="container">
-	<div class="header">
-		<button (click)="close()">закрыть</button>
+	<div class="header-block">
+		<h3 class="header-title">{{header}}</h3>
+		<a class="close-button" (click)="close()">
+			<i class="fa fa-times" aria-hidden="true"></i>
+		</a>
 	</div>
 	<div class="content">
-		<h6>{{header}}</h6>
 		<span>{{description}}</span>
 	</div>
 </div>
