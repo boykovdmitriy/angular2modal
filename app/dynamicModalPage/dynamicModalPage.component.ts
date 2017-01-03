@@ -11,7 +11,7 @@ import {
 import { NotificationManager } from "./modal/notification.manager";
 import {
 	ModalDialogComponent
-} from "./modal/ModalDialogComponent/modalDialog.component";
+} from "./modal/modalDialogComponent/modalDialog.component";
 import { ModalDialogResult } from "./modal/modalDialog.base";
 
 @Component({

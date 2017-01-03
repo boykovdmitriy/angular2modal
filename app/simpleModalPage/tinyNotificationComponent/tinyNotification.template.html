@@ -1,0 +1,13 @@
+<div class="tiny-notification-panel">
+	<div *ngFor="let notification of notifications" class="tiny-notification">
+		<div class="header-block">
+			<h3 class="header-title">{{notification.header}}</h3>
+			<a class="close-button" (click)="closeNotification(notification)">
+				<i class="fa fa-times" aria-hidden="true"></i>
+			</a>
+		</div>
+		<div class="content">
+			<span>{{notification.description}}</span>
+		</div>
+	</div>
+</div>

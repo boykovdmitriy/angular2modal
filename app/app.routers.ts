@@ -3,8 +3,9 @@
  */
 
 import { Routes } from '@angular/router';
-import { SelectModalPageComponent } from "./SelectModalPage/selectModalPage.component";
-import { DynamicModalPageComponent } from "./DynamicModalPage/dynamicModalPage.component";
+import { SelectModalPageComponent } from "./selectModalPage/selectModalPage.component";
+import { DynamicModalPageComponent } from "./dynamicModalPage/dynamicModalPage.component";
+import { SimpleModalPageComponent } from "./simpleModalPage/simpleModalPage.component";
 
 export const ROUTES: Routes = [
 
@@ -14,5 +15,8 @@ export const ROUTES: Routes = [
 	}, {
 		path     : 'dynamic-modal',
 		component: DynamicModalPageComponent
+	}, {
+		path     : 'simple-modal',
+		component: SimpleModalPageComponent
 	}
 ];

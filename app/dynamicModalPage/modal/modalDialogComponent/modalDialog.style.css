@@ -1,0 +1,59 @@
+.modal-background {
+	position         : absolute;
+	display          : flex;
+	justify-content  : center;
+	align-items      : center;
+	z-index          : 9999;
+	left             : 0;
+	right            : 0;
+	top              : 0;
+	bottom           : 0;
+	background-color : rgba(0, 0, 0, 0.6);
+}
+
+.modal-background:hover {
+	background-color : rgba(0, 0, 0, 0.8);
+}
+
+.container {
+	position        : relative;
+	display         : flex;
+	flex-direction  : column;
+	justify-content : flex-start;
+	width           : 350px;
+	border-radius   : 5px;
+	border          : gray solid 1px;
+	background      : white;
+	color           : black;
+	margin-bottom   : 15px;
+	padding-bottom  : 10px;
+}
+
+.header-block {
+	display         : flex;
+	flex-direction  : row;
+	justify-content : space-between;
+	align-items     : center;
+	padding         : 5px 15px;
+}
+
+.header-title {
+	margin : 0;
+}
+
+.close-button {
+	font-size : 1.2rem;
+	cursor    : pointer;
+	color     : #000000;
+}
+
+.content {
+	color      : #000000;
+	padding    : 1rem;
+	border-top : 1px solid #000000;
+}
+
+.action-block {
+	display         : flex;
+	justify-content : flex-end;
+}
