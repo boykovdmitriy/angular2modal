@@ -41,16 +41,16 @@
 	margin : 0;
 }
 
-.content {
-	color      : #000000;
-	padding    : 1rem;
-	border-top : 1px solid #000000;
-}
-
 .close-button {
 	font-size : 1.2rem;
 	cursor    : pointer;
 	color     : #000000;
+}
+
+.content {
+	color      : #000000;
+	padding    : 1rem;
+	border-top : 1px solid #000000;
 }
 
 .action-block {

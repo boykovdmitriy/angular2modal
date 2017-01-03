@@ -29,14 +29,14 @@
 	margin : 0;
 }
 
-.content {
-	color      : white;
-	padding    : 1rem;
-	border-top : 1px solid white;
-}
-
 .close-button {
 	font-size : 1.2rem;
 	cursor    : pointer;
 	color     : white;
+}
+
+.content {
+	color      : white;
+	padding    : 1rem;
+	border-top : 1px solid white;
 }

@@ -23,9 +23,9 @@ export class NotificationPanelComponent {
 	@ViewChild('notifications', { read: ViewContainerRef }) notificationBlock: ViewContainerRef;
 
 	public showNotification(componentRef: ComponentRef<any>, timeOut: number) {
-		let toast = componentRef;
+		const toast = componentRef;
 		this.notificationBlock.insert(toast.hostView);
-		let subscription = toast.instance.closedEvent.subscribe(()=> {
+		const subscription = toast.instance.closedEvent.subscribe(()=> {
 			this.destroyComponent(toast, subscription);
 		});
 		setTimeout(()=> {
