@@ -8,5 +8,9 @@ html, body {
 
 .header {
 	background : var(--header-color);
-	color      : white;
+}
+
+.header .header-title {
+	color           : white;
+	text-decoration : none;
 }
