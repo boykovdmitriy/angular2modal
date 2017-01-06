@@ -1,7 +1,10 @@
 /**
  * Created by Boykov D. on 1/3/2017.
  */
-import { Component } from "@angular/core";
+import {
+	Component,
+	ViewEncapsulation
+} from "@angular/core";
 import { TinyNotificationService } from "./tinyNotificationComponent/tinyNotification.service";
 import { TinyNotificationModel } from "./tinyNotificationComponent/tinyNotification.model";
 
@@ -10,7 +13,8 @@ import { TinyNotificationModel } from "./tinyNotificationComponent/tinyNotificat
 	           template: require('./simpleModalPage.template.html'),
 	           styles  : [require('../sharedStyle/buttons.style.css'),
 	                      require('../sharedStyle/inputs.style.css'),
-	                      require('./simpleModalPage.style.css')]
+	                      require('./simpleModalPage.style.css')],
+	           encapsulation: ViewEncapsulation.Emulated
            })
 
 export class SimpleModalPageComponent {

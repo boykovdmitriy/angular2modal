@@ -19,7 +19,8 @@ import { ModalDialogResult } from "./modal/modalDialog.base";
 	           template: require('./dynamicModalPage.template.html'),
 	           styles  : [require('./dynamicModalPage.style.css'),
 	                      require('../sharedStyle/buttons.style.css'),
-	                      require('../sharedStyle/inputs.style.css')]
+	                      require('../sharedStyle/inputs.style.css')],
+	           encapsulation: ViewEncapsulation.Emulated
            })
 export class DynamicModalPageComponent implements OnInit {
 	@ViewChild('notificationBlock', { read: ViewContainerRef }) notificationBlock: ViewContainerRef;

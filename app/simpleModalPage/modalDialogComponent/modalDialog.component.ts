@@ -6,14 +6,16 @@ import {
 	Component,
 	Input,
 	Output,
-	EventEmitter
+	EventEmitter,
+	ViewEncapsulation
 } from "@angular/core";
 
 @Component({
-	           selector: 'modal-dialog',
-	           template: require('./modalDialog.template.html'),
-	           styles  : [require('./modalDialog.style.css'),
-	                      require('../../sharedStyle/buttons.style.css')]
+	           selector     : 'modal-dialog',
+	           template     : require('./modalDialog.template.html'),
+	           styles       : [require('./modalDialog.style.css'),
+	                           require('../../sharedStyle/buttons.style.css')],
+	           encapsulation: ViewEncapsulation.Emulated
            })
 
 export class ModalDialogComponent {
@@ -28,5 +30,4 @@ export class ModalDialogComponent {
 	private close() {
 		this.isConfirmed.emit(false);
 	}
-
 }

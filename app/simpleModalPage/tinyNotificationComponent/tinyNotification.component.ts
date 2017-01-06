@@ -2,14 +2,18 @@
  * Created by Boykov D. on 1/3/2017.
  */
 
-import { Component } from "@angular/core";
+import {
+	Component,
+	ViewEncapsulation
+} from "@angular/core";
 import { TinyNotificationModel } from "./tinyNotification.model";
 import { TinyNotificationService } from "./tinyNotification.service";
 
 @Component({
-	           selector: "notifications",
-	           template: require('./tinyNotification.template.html'),
-	           styles  : [require('./tinyNotification.style.css')]
+	           selector     : "notifications",
+	           template     : require('./tinyNotification.template.html'),
+	           styles       : [require('./tinyNotification.style.css')],
+	           encapsulation: ViewEncapsulation.Emulated
            })
 
 export class TinyNotificationComponent {
