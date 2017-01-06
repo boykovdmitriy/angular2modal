@@ -1,0 +1,18 @@
+<div class="container">
+	<div class="description">
+		<h1>Модальные окна с динамическим рендерингом компонентов</h1>
+	</div>
+	<div class="configuration">
+		<div>
+			<label for="header">Заголовок:</label>
+			<input type="text" id="header" #header class="simple-input">
+		</div>
+		<label for="description">Содержимое:</label>
+		<input type="text" id="description" #description content="description" class="simple-input">
+	</div>
+	<div>
+		<button class="simple-button" (click)="showToast(header.value,description.value)">Show Toast</button>
+		<button class="simple-button" (click)="showDialog(header.value,description.value)">Show Dialog</button>
+	</div>
+</div>
+<section #notificationBlock></section>

@@ -1,0 +1,11 @@
+.container {
+	display         : flex;
+	flex-direction  : column;
+	justify-content : center;
+	align-items     : center;
+}
+
+.configuration {
+	border  : 1px grey solid;
+	padding : 4px;
+}

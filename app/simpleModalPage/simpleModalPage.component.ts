@@ -7,13 +7,10 @@ import { TinyNotificationModel } from "./tinyNotificationComponent/tinyNotificat
 
 @Component({
 	           selector: 'css-modal',
-	           template: `
-<button class="simple-button"  (click)="showToast()">Show Toast</button>
-<button class="simple-button"  (click)="showDialog()">Show Dialog</button>
-<notifications></notifications>
-<modal-dialog *ngIf="isModalDialogVisible" [header]="'header'" [description]="'description'" (isConfirmed)="closeModal($event)"></modal-dialog>`
-	           ,
-	           styles  : [require('../sharedStyle/buttons.style.css')]
+	           template: require('./simpleModalPage.template.html'),
+	           styles  : [require('../sharedStyle/buttons.style.css'),
+	                      require('../sharedStyle/inputs.style.css'),
+	                      require('./simpleModalPage.style.css')]
            })
 
 export class SimpleModalPageComponent {
@@ -21,8 +18,8 @@ export class SimpleModalPageComponent {
 
 	constructor(private notificationService: TinyNotificationService) {}
 
-	public showToast() {
-		this.notificationService.showToast(new TinyNotificationModel('header', 'description'));
+	public showToast(header: string, description: string) {
+		this.notificationService.showToast(new TinyNotificationModel(header, description));
 	}
 
 	public showDialog() {
@@ -31,5 +28,11 @@ export class SimpleModalPageComponent {
 
 	public closeModal(isConfirmed: boolean) {
 		this.isModalDialogVisible = false;
+		if (isConfirmed) {
+			this.showToast('modal dialog', "modal dialog is confirmed");
+		}
+		else {
+			this.showToast('modal dialog', "modal dialog is closed");
+		}
 	}
 }
