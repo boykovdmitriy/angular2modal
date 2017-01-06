@@ -4,7 +4,10 @@
 import { Subject } from "rxjs/Rx";
 
 export abstract class NotificationBase {
-	public closedEvent = new Subject();
+	protected closedEvent = new Subject();
 
+	public getClosedEvent(){
+		return this.closedEvent;
+	}
 	public abstract close(): void;
 }

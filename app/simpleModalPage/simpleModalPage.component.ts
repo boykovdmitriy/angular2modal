@@ -9,7 +9,7 @@ import { TinyNotificationService } from "./tinyNotificationComponent/tinyNotific
 import { TinyNotificationModel } from "./tinyNotificationComponent/tinyNotification.model";
 
 @Component({
-	           selector: 'css-modal',
+	           selector: 'simple-modal',
 	           template: require('./simpleModalPage.template.html'),
 	           styles  : [require('../sharedStyle/buttons.style.css'),
 	                      require('../sharedStyle/inputs.style.css'),

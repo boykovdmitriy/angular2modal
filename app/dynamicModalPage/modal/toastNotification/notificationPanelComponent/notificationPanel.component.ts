@@ -9,6 +9,7 @@ import {
 	ViewEncapsulation
 } from "@angular/core";
 import { Subscription } from "rxjs/Rx";
+import { NotificationBase } from "../../notificationBase";
 @Component({
 	           selector     : 'notification-panel',
 	           template     : `
@@ -16,24 +17,25 @@ import { Subscription } from "rxjs/Rx";
 	<div #notifications></div>
 </div>
 						`,
-	           styles    : [require('./notificationPanel.style.css')],
+	           styles       : [require('./notificationPanel.style.css')],
 	           encapsulation: ViewEncapsulation.Emulated
            })
 export class NotificationPanelComponent {
 	@ViewChild('notifications', { read: ViewContainerRef }) notificationBlock: ViewContainerRef;
 
-	public showNotification(componentRef: ComponentRef<any>, timeOut: number) {
+	public showNotification<T extends NotificationBase>(componentRef: ComponentRef<T>, timeOut: number) {
 		const toast = componentRef;
 		this.notificationBlock.insert(toast.hostView);
-		const subscription = toast.instance.closedEvent.subscribe(()=> {
-			this.destroyComponent(toast, subscription);
-		});
+		let subscription = toast.instance.getClosedEvent()
+		                        .subscribe(()=> {
+			                        this.destroyComponent(toast, subscription);
+		                        });
 		setTimeout(()=> {
 			toast.instance.close();
 		}, timeOut);
 	}
 
-	private destroyComponent(componentRef: ComponentRef<any>, subscription: Subscription) {
+	private destroyComponent<T extends NotificationBase>(componentRef: ComponentRef<T>, subscription: Subscription) {
 		componentRef.destroy();
 		subscription.unsubscribe();
 	}
