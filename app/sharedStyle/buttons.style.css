@@ -16,7 +16,3 @@
 .simple-button:active {
 	background-color : #006e96;
 }
-
-.simple-button:focus, .simple-button:active, .simple-button:hover {
-	outline : 0;
-}
