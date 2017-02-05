@@ -6,8 +6,8 @@ import { Component } from "@angular/core";
 	           selector: "select-modal-page",
 	           template: `
 <ul>
-	<li><a routerLink="/simple-modal">Модальные окна с простым добавлением компонентов в template</a></li>
-	<li><a routerLink="/dynamic-modal">Модальные окна с динамическим рендерингом компонентов</a></li>
+	<li><a routerLink="/simple-modal">Modals with simple component loader</a></li>
+	<li><a routerLink="/dynamic-modal">Modals with dynamic component loader</a></li>
 </ul>
 `
            })
