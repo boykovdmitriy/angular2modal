@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "webpack-dev": "webpack-dev-server"
+    "webpack-dev": "webpack-dev-server",
+    "start": "node ./index.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,9 @@
   },
   "homepage": "https://github.com/boykovdmitriy/angular2modal#readme",
   "dependencies": {
+    "express": "4.15.2"
+  },
+  "devDependencies": {
     "@angular/common": "2.4.1",
     "@angular/compiler": "2.4.1",
     "@angular/core": "2.4.1",
