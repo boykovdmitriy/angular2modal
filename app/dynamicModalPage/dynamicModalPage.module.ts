@@ -1,6 +1,3 @@
-/**
- * Created by Boykov D. on 12/26/2016.
- */
 import { BrowserModule } from "@angular/platform-browser";
 import { DynamicModalPageComponent } from "./dynamicModalPage.component";
 import { NgModule } from "@angular/core";

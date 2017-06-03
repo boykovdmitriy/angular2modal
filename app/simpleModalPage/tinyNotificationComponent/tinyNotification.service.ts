@@ -1,6 +1,3 @@
-/**
- * Created by Boykov D. on 1/3/2017.
- */
 import { Injectable } from "@angular/core";
 import { TinyNotificationModel } from "./tinyNotification.model";
 import { Subject } from "rxjs";

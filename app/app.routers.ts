@@ -1,7 +1,3 @@
-/**
- * Created by Boykov D. on 12/26/2016.
- */
-
 import { Routes } from '@angular/router';
 import { SelectModalPageComponent } from "./selectModalPage/selectModalPage.component";
 import { DynamicModalPageComponent } from "./dynamicModalPage/dynamicModalPage.component";

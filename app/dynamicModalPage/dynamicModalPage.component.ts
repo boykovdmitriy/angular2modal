@@ -1,6 +1,3 @@
-/**
- * Created by Boykov D. on 12/26/2016.
- */
 import {
 	ViewEncapsulation,
 	Component,

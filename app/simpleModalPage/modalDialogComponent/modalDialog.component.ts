@@ -1,7 +1,3 @@
-/**
- * Created by Boykov D. on 1/3/2017.
- */
-
 import {
 	Component,
 	Input,
