@@ -1,0 +1,7 @@
+@import "~normalize.css";
+@import "loader.css";
+
+html, body {
+    margin           : 0;
+    background-color : #C58C92;
+}
