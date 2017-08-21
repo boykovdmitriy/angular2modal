@@ -1,7 +1,14 @@
 @import "~normalize.css";
-@import "loader.css";
+@import "~font-awesome/css/font-awesome.css";
+
+:root {
+    --main-color      : #c1fdff;
+    --side-menu-color : #2c343b;
+}
 
 html, body {
+    width            : 100%;
+    height           : 100%;
     margin           : 0;
-    background-color : #C58C92;
+    background-color : var(--main-color);
 }

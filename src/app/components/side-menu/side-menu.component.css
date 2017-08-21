@@ -1,0 +1,30 @@
+:host {
+    display          : inline-block;
+    height           : 100%;
+    background-color : var(--side-menu-color);
+}
+
+ul {
+    list-style-type : none;
+    padding         : 0;
+    margin-left     : 10px;
+}
+
+li {
+    display    : block;
+    margin-top : 3px;
+}
+
+a {
+    display         : block;
+    text-decoration : none;
+    color           : white;
+    font-size       : 1.5rem;
+    text-align      : left;
+    padding         : 12px;
+}
+
+a:active{
+    text-overflow: clip;
+    background-color: #617381;
+}
